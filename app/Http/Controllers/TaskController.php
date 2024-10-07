@@ -31,20 +31,18 @@ class TaskController extends Controller
     public function store(Request $request):RedirectResponse
     {
         $task= new Task();
-        $task->title=$request->title;
+        $task->task_name=$request->task_name;
         $task->description=$request->description;
-        $task->attachment=$request->attachment;
-        $task->task_image=$request->task_image;
-        $path = 'images';
-        $fileName = $this->uploadFile($request->photo, 'images');
-
-        $request->photo->move($path, $fileName );
-       
+        $task->start_date=$request->start_date;
+        $task->due_date=$request->due_date;
         $task->status=$request->status;
-
+        $task->task_image=$request->file('task_image')->getClientOriginalName();
+        $task->attachment=$request->file('attachment')->getClientOriginalName(); 
         $task->save();
-       
-        return redirect('dashbord.tasks.index');
+        //$this->uploadFile($request,'task_image','images/project');
+       // $this->uploadFile($request,'attachment','images');
+        return redirect('index-project');
+        
     }
 
     /**
@@ -53,7 +51,7 @@ class TaskController extends Controller
     public function show(string $id)
     {
         $task=Task::findOrfail($id);
-        return view('tasks.my-task',compact('task'));
+        return view(' dashboard.tasks.my-task',compact('task'));
     }
 
     /**
@@ -89,6 +87,6 @@ class TaskController extends Controller
     {
         $id = $request->id;
         Task::where('id',$id)->delete();
-        return redirect('dahbord.tasks.index');
+        return redirect('dahboard.tasks.index');
     }
 }

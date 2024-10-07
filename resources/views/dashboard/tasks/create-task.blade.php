@@ -1,18 +1,18 @@
-@extends('dashboard.master2')
+@extends('dashboard.layout')
 @section('title','create new task')
 @section('content')
-   
         <h5>Create New Subtask</h5>
         <div class="right">
-            <a href="{{asset('javascript:void(0);')}}" class="icon act-suggest"><i class="icon-check"></i></a>
-            <a href="{{asset('javascript:void(0);')}}" class="icon"><i class="icon-more"></i></a>
+            <a href="javascript:void(0);" class="icon act-suggest"><i class="icon-check"></i></a>
+            <a href="javascript:void(0);" class="icon"><i class="icon-more"></i></a>
         </div>
     </div>
     <div class="app-content style-2">
-        <div class="tf-container">
+        <form class="tf-container" method="post"action="{{route('store-task')}}">
+            @csrf
             <div class="mt-24">
                 <h6 class="text-black-2">Task Name</h6>
-                <input type="text" placeholder="Wireframe for NFT Landing Page" class="mt-16" name="name_task">
+                <input type="text" placeholder="Wireframe for NFT Landing Page" class="mt-16" name ="task_name">
             </div>
             <div class="mt-20">
                 <h6 class="text-black-2">Timeline</h6>
@@ -24,12 +24,12 @@
                             </div>
                             <div class="content">
                                 <p class="text-caption-2 text-black-5">Start Date</p>
-                                <div class="mt-2 body-4 fw-5 text-black-7 valDate-start">December 25</div>
+                                <div class="mt-2 body-4 fw-5 text-black-7 valDate-start" >December 25</div>
                             </div>
                         </div>
                         <div class="dropdown-menu dropdown-calendar">
                             <div id='calendar-start'></div>
-                            <span id="btnCloseDropdown1" class="btn-close-drop"><i class="icon-close2"></i></span>
+                            <span id="btnCloseDropdown1" class="btn-close-drop"><i class="icon-close2" type="date" name="start_date" value=""></i></span>
                             
                         </div>
                     </div>
@@ -40,12 +40,12 @@
                             </div>
                             <div class="content">
                                 <p class="text-caption-2 text-black-5">Due Date</p>
-                                <div class="mt-2 body-4 fw-5 text-black-7 valDate-due">December 31</div>
+                                <div class="mt-2 body-4 fw-5 text-black-7 valDate-due" >December 31</div>
                             </div>
                         </div>
                         <div class="dropdown-menu dropdown-calendar">
                             <div id='calendar-due'></div>
-                            <span id="btnCloseDropdown2" class="btn-close-drop st2"><i class="icon-close2"></i></span>
+                            <span id="btnCloseDropdown2" class="btn-close-drop st2"><i class="icon-close2" type="date"  name="due_date"value=""></i></span>
                             
                         </div>
                     </div>
@@ -56,22 +56,20 @@
             <div class="mt-24 list-desc-project-style2">
                 <h6 class="left text-black-2">Description </h6>
                 <div class="right h9 text-black-5">
-                    <input type="text" placeholder="Add task description">
+                    <input type="text" placeholder="Add task description" name="description">
                 </div>
             </div>
             <div class="mt-20 list-desc-project-style2">
                 <h6 class="left text-black-2">Task Status </h6>
-                <ul class="right d-flex gap-8">
-                    <li>
-                        <a href="javascript:void(0);" class="task-status style-2 type-1">To Do</a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="task-status style-2 type-2">Ongoing</a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="task-status style-2 type-3">Backlog</a>
-                    </li>
-                </ul>
+                <select class="right d-flex gap-8" name="status" >
+                    
+                        <option href="{{asset('javascript:void(0);')}}" class="task-status style-2 type-1"  value="Pending">To Do</option>
+                   
+                        <option href="{{asset('javascript:void(0);')}}" class="task-status style-2 type-2"   value="In Progress">Ongoing</option>
+                    
+                        <option href="{{asset('javascript:void(0);')}}" class="task-status style-2 type-3" value="Completed" >Backlog</option>
+                    
+                </select>
             </div>
             <a href="add-tag.html" class="mt-20 d-flex align-items-center gap-8 h9 text-primary">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +81,7 @@
             <div class="mt-40">
                 <div class="enter-task">
                     <ul class="box-left">
-                        <li><a href="javascript:void(0);">
+                        <li><a href="{{asset('images')}}">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M15 8H15.01" stroke="#31394F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M17 4H7C5.34315 4 4 5.34315 4 7V17C4 18.6569 5.34315 20 7 20H17C18.6569 20 20 18.6569 20 17V7C20 5.34315 18.6569 4 17 4Z" stroke="#31394F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -121,12 +119,12 @@
                     <ul class="list-stacked right">
                         <li class="avt-list">
                             <div class="avatar avt-24 round">
-                                <img src="images/avt/avt4.jpg" alt="img">
+                                <img src="{{asset('images/avt/avt4.jpg')}}" alt="img " name="task_image">
                             </div>
                         </li>
                         <li class="avt-list">
                             <div class="avatar avt-24 round">
-                                <img src="images/avt/avt8.jpg" alt="img">
+                                <img src="{{asset('images/avt/avt8.jpg')}}" alt="img" name="attachement">
                             </div>
                         </li>
                         
@@ -143,14 +141,20 @@
             </div>
 
             <div class="footer-fixed button">
-                <a href="project-details.html" class="tf-btn primary">Done</a>
+                <button class="tf-btn primary">Done</button>
             </div>
-        </div>
+        </form>
     </div>
 
+
+    
+    
+
     <script type="text/javascript" src="{{asset('js/fullcalendar.min.js')}}"></script>
+    
     <script type="text/javascript" src="{{asset('js/calendar-custom.js')}}"></script>
- <script>
+    
+    <script>
 
         
            
@@ -161,8 +165,8 @@
 
     </script>
 
+  
 @endsection
-    
-    
+
 
    

@@ -1,49 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from themesflat.co/html/taskose/taskose/profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 20:46:17 GMT -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover">
-    <!-- font -->
-    <link rel="stylesheet" href="{{asset('fonts/fonts.css')}}">
-    <!-- Icons -->
-    <link rel="stylesheet" href="{{asset('fonts/font-icons.css')}}">
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet"type="text/css" href="{{asset('css/nouislider.min.css')}}"/>
-    <link rel="stylesheet" href="{{asset('css/swiper-bundle.min.css')}}">
-    <link rel="stylesheet"type="text/css" href="{{asset('css/styles.css')}}"/>
-
-    <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="{{asset('images/logo/168.png')}}" />
-    <link rel="apple-touch-icon-precomposed" href="{{asset('images/logo/168.png')}}" />
-
-    <title>Profile</title>
-</head>
-
-<body>
-    <!-- preloade -->
-    <div class="preload preload-container">
-        <div class="logo-img">
-            <img src="images/logo/logo-2.png" alt="logo">
-        </div>
-        <div class="spinner-circle lg success">
-            <span class="spinner-circle1 spinner-child"></span>
-            <span class="spinner-circle2 spinner-child"></span>
-            <span class="spinner-circle3 spinner-child"></span>
-            <span class="spinner-circle4 spinner-child"></span>
-            <span class="spinner-circle5 spinner-child"></span>
-            <span class="spinner-circle6 spinner-child"></span>
-            <span class="spinner-circle7 spinner-child"></span>
-            <span class="spinner-circle8 spinner-child"></span>
-            <span class="spinner-circle9 spinner-child"></span>
-        </div>
-    </div>
-    <!-- /preload -->
-    <div class="header fixed-top line-bt">
-        <div class="left">
-          <a href="{{asset('javascript:void(0);')}}" class="icon back-btn"><i class="icon-back"></i></a>
-        </div>
+@extends('dashboard.layout')
+@section('title','profile')
+@section('content')
         <h5>Profile</h5>
         <div class="right">
             <a href="#language" data-bs-toggle="offcanvas" aria-controls="offcanvasBottom" class="icon text-black-6"><i class="icon-settings"></i></a>
@@ -63,7 +20,7 @@
                 </div>
                 <div class="content text-center">
                     <h5>Jonathan Smith</h5>
-                    <p class="mt-4 body-4 text-black-4">jonathansmith@workmail.com</p>
+                    <p class="mt-4 body-4 text-black-4">@seesion('email')</p>
                 </div>
             </div>
             <a href="edit-profile.html" class="tf-btn primary">Edit Profile</a>
@@ -542,11 +499,4 @@
     </div>
 
 
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-
-</body>
-
-<!-- Mirrored from themesflat.co/html/taskose/taskose/profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 20:46:20 GMT -->
-</html>
+   @endsection

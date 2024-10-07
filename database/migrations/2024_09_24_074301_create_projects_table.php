@@ -15,6 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description')->nullable();
+            $table->string('num_team')->nullable();
+            $table->string('leader')->nullable();
+            $table->text('attachment')->nullable();
+            $table->date('date')->nullable();
+            $table->enum('status', ['Pending', 'In Progress', 'Completed'])->default('Pending');
             $table->foreignId('user_id')->nullable()->references('id')->on('users')->cascade('delete');
             $table->timestamps();
         });
