@@ -57,7 +57,7 @@
                 </a>
             </div>
             
-            <p class="mt-70 text-center body-2 fw-5 text-black-5">Don’t have account?<a href="{{route('signin')}}" class="text-primary fw-7 body-2">sign Up</a></p>
+            <p class="mt-70 text-center body-2 fw-5 text-black-5">Don’t have account?<a href="{{route('signin')}}" class="text-primary fw-7 body-2">sign In</a></p>
         </div>
     </div>
            

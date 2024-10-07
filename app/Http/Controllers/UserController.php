@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Project;
+use App\Models\Task;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
@@ -37,8 +39,8 @@ class UserController extends Controller
         $user->email=$request->email;
         $user->password=$request->password;
         $user->save();
-        return back()->with('success', 'user Add Successfully');
-
+       // return back()->with('success', 'user Add Successfully');
+return redirect('index');
     }
     public function store_user(Request $request): RedirectResponse
     {
@@ -52,7 +54,6 @@ class UserController extends Controller
            $user= User::create([
          
            'name' => $request->name,
-           
             'email' => $request->email,
             'password' => Hash::make($request->password)
            
@@ -62,13 +63,14 @@ class UserController extends Controller
        event(new Registered($user));
 
         Auth::login($user);
-        $request->session()->put('name', Auth::user()->name);
-        //return back()->with('success', 'user Add Successfully');
-        return redirect('verify-email');
+        $request->session()->put('email', Auth::user()->email);
+        return back()->with('success', 'user Add Successfully');
+        //return redirect('verify-email');
     }
     
    public function verify_email(){
-    return view('dashboard.users.signUp-verify-email');
+    $user =User::get();
+    return view('dashboard.users.signUp-verify-email',compact('user'));
    }
    public function verify_phone(){
     return view('dashboard.users.signUp-verify-code-phone');
@@ -84,6 +86,8 @@ class UserController extends Controller
     }
     public function login(Request $request)
     {
+       
+ 
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
@@ -93,9 +97,10 @@ class UserController extends Controller
             $request->session()->regenerate();
     
             $request->session()->put('name', Auth::user()->name);
-    
+            $user = $request->session()->only(['name', 'email']);
+ 
            // return redirect()->intended('/index');
-            return view('dashboard.home.index');
+            return view('dashboard.users.profile');
         }
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
@@ -110,6 +115,13 @@ class UserController extends Controller
        public function pass_phone(){
         return view('dashboard.users.forgot-pass-with-phone');
        }
+       public function search(Request $request){
+        $search=$request->search;
+        $project=Project::where('title','%','$search','%');
+       
+     return view('dashboard.projects.project-details');
+       }
+       
     public function index()
     {
         $user =User::get();

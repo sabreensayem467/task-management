@@ -26,34 +26,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">
-                                <span class="text">Oct</span>
-                                <h2>27</h2>
-                                <span class="text">2023</span>
-                            </div>
-                            <div class="timeline-content">
-                                <h4 class="fw-7">Your heading</h4>
-                                <p class="fw-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et sodales purus.</p>
-                                <div class="img-box">
-                                    <img src="images/store/store4.png" alt="img">
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">
-                                <span class="text">Oct</span>
-                                <h2>27</h2>
-                                <span class="text">2023</span>
-                            </div>
-                            <div class="timeline-content">
-                                <h4 class="fw-7">Your heading</h4>
-                                <p class="fw-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et sodales purus.</p>
-                                <div class="img-box">
-                                    <img src="images/store/store10.png" alt="img">
-                                </div>
-                            </div>
+                        
+                       
                             
                         </div>
                     </div>
@@ -77,72 +51,12 @@
                             </div>
                            
                         </div>
-                        <div class="timeline-item success">
-                            <div class="timeline-header">
-                                <p>October 26, 2023</p>
-                                <h4 class="fw-7">Your heading</h4>
-
-                            </div>
-                            <div class="timeline-body fw-5">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et sodales purus.
-                            </div>
-                           
-                        </div>
-                        <div class="timeline-item danger">
-                            <div class="timeline-header">
-                                <p>October 26, 2023</p>
-                                <h4 class="fw-7">Your heading</h4>
-
-                            </div>
-                            <div class="timeline-body fw-5">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et sodales purus.
-                            </div>
-                           
-                        </div>
-                        <div class="timeline-item warning">
-                            <div class="timeline-header">
-                                <p>October 26, 2023</p>
-                                <h4 class="fw-7">Your heading</h4>
-
-                            </div>
-                            <div class="timeline-body fw-5">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et sodales purus.
-                            </div>
-                           
-                        </div>
-                        <div class="timeline-item light">
-                            <div class="timeline-header">
-                                <p>October 26, 2023</p>
-                                <h4 class="fw-7">Your heading</h4>
-
-                            </div>
-                            <div class="timeline-body fw-5">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et sodales purus.
-                            </div>
-                           
-                        </div>
-                        <div class="timeline-item dark">
-                            <div class="timeline-header">
-                                <p>October 26, 2023</p>
-                                <h4 class="fw-7">Your heading</h4>
-
-                            </div>
-                            <div class="timeline-body fw-5">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et sodales purus.
-                            </div>
-                           
-                        </div>
-                        <div class="timeline-item disable">
-                            <div class="timeline-header">
-                                <p>October 26, 2023</p>
-                                <h4 class="fw-7">Your heading</h4>
-
-                            </div>
-                            <div class="timeline-body fw-5">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et sodales purus.
-                            </div>
-                           
-                        </div>
+                       
+                        
+                       
+                       
+                       
+                        
                     </div>
                     
                 </div>

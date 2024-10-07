@@ -13,7 +13,7 @@ class ProjectController extends Controller
     public function index()
     {
         $project=Project::get();
-        return view('projects.index',compact('project'));
+        return view(' dashboard.home.index',compact('project'));
     }
 
     /**
@@ -21,7 +21,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view ('projects.create-project');
+        return view ('dashboard.projects.add-project');
     }
 
     /**
@@ -32,9 +32,13 @@ class ProjectController extends Controller
         $project= new Project();
         $project->name=$request->name;
         $project->description=$request->description;
+        $project->leader=$request->leader;
+        $project->date=$request->date;
+        $project->num_team=$request->num_team;
+        $project->attachment=$request->attachment;
         $project->save();
        
-        return redirect('projects.index');
+        return redirect('/index-project');
     }
 
     /**
@@ -76,6 +80,7 @@ class ProjectController extends Controller
     {
         $id = $request->id;
         Project::where('id',$id)->delete();
-        return redirect('projects.index');
+        return redirect('dashboard.projects.my-project-empty-task');
     }
+    
 }

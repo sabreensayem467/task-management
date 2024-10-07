@@ -8,7 +8,7 @@
     <div class="app-content style-3">
         <div class="tf-container">
                 <p class="mt-24 body-6 text-black-5">Please enter the code we just sent to email</p>
-                <p class="body-6 fw-5">jonathansmith@gmail.com</p>
+                <p class="body-6 fw-5">{{$user->email}}</p>
 
                 <div class="digit-group mt-35" >
                     <input class="form-control" required type="text" id="digit-2" name="digit-2" data-next="digit-3" data-previous="digit-1" value="7">
